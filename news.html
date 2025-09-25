@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Latest Cricket News - Cricket Daily Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #fff);
+      animation: fadeIn 1s ease;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+   
+    .navbar {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar a {
+      color: black;
+      text-decoration: none;
+      padding: 12px 18px;
+      margin: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+      border-radius: 4px;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      background-color:#004080;
+      color: white;
+      box-shadow: 0 0 8px #004080;
+      transform: scale(1.1);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 40px;
+      font-size: 2.8em;
+      position: relative;
+    }
+
+    
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-auto-rows: minmax(180px, auto);
+      gap: 25px;
+      position: relative;
+    }
+
+    .news-item {
+      background: linear-gradient(135deg, #fff, #f9f9f9);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      isolation: isolate;
+    }
+
+    .news-item::before {
+      content: '';
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: rgba(255, 87, 34, 0.1);
+      top: -100px;
+      right: -100px;
+      border-radius: 50%;
+      transition: 0.5s;
+      z-index: 0;
+    }
+
+    .news-item:hover::before {
+      top: -50px;
+      right: -50px;
+    }
+
+    .news-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .news-item h2 {
+      color: #333;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+      font-size: 1.3em;
+      transform: rotate(-2deg);
+      background: #004080;
+      color: white;
+      padding: 5px 10px;
+      display: inline-block;
+      border-radius: 5px;
+      box-shadow: 0 0 8px #004080(240, 66, 13, 0.4);
+    }
+
+    .news-item p {
+      color: #555;
+      line-height: 1.5;
+      z-index: 1;
+      position: relative;
+      font-size: 0.95em;
+    }
+
+    .highlighted {
+      animation: glowEffect 1.5s ease;
+      box-shadow: 0 0 15px gray;
+    }
+
+    @media(max-width: 600px) {
+      .news-item h2 {
+        font-size: 1.1em;
+      }
+      h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+  
+    <a href="home.html">Home</a>
+    <a href="news.html" class="active">News</a>
+    <a href="highlight.html">Highlights</a>
+    <a href="contest.html">Daily contest!</a>
+  </div>
+
+  <div class="container">
+    <h1>Latest Cricket News</h1>
+    
+    <div class="news-grid">
+      <div class="news-item">
+        <h2>🏏 India Clinches Series Win</h2>
+        <p>India beat Australia by 5 wickets in the final ODI, winning the series 2-1. Rohit Sharma led with a 95-run knock.</p>
+      </div>
+
+      <div class="news-item">
+        <h2>🌍 T20 World Cup Schedule</h2>
+        <p>The ICC released the full schedule for the upcoming T20 World Cup 2025. Tournament kicks off on October 15 in England.</p>
+      </div>
+
+      <div class="news-item">
+        <h2>🚨 BCCI Announces Asia Cup Squad</h2>
+        <p>Virat Kohli returns as India prepares for the Asia Cup. Youngsters like Tilak Varma also make the cut.</p>
+      </div>
+
+      <div class="news-item">
+        <h2>📢 Dhoni Hints IPL 2026 Comeback</h2>
+        <p>MS Dhoni stated he hasn't ruled out returning to the IPL 2026 season if his fitness permits.</p>
+      </div>
+
+      <div class="news-item">
+        <h2>🔥 Pakistan Defeats England</h2>
+        <p>Pakistan edged England in a last-ball thriller, thanks to Shadab Khan's all-round performance.</p>
+      </div>
+
+      <div class="news-item">
+        <h2>💼 Dravid Continues as Coach</h2>
+        <p>Rahul Dravid's contract extended till Champions Trophy 2025. BCCI praised his structured approach.</p>
+      </div>
+
+      <div class="news-item">
+        <h2>🎖 Bumrah Ranked No.1</h2>
+        <p>Jasprit Bumrah becomes the first Indian fast bowler to top ICC Test rankings after an 8-wicket haul vs South Africa.</p>
+      </div>
+
+      <div class="news-item">
+        <h2>🚨 BCCI Announces Asia Cup Squad</h2>
+        <p>Virat Kohli returns as India prepares for the Asia Cup. Youngsters like Tilak Varma also make the cut.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const newsItems = document.querySelectorAll('.news-item');
+    
+    newsItems.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.add('highlighted');
+        setTimeout(() => {
+          item.classList.remove('highlighted');
+        }, 1500);
+      });
+    });
+  </script>
+
+</body>
+</html>
